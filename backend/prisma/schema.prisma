@@ -1,0 +1,93 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+
+enum Menu {
+  DASHBOARD
+  VEHICLES
+  ADMIN
+}
+
+enum VehicleType {
+  AUTO
+  SUV
+  MISUV
+  CARRIAGE
+  MOTO
+}
+
+enum FuelType {
+  NAFTA_COMUN
+  NAFTA_INTERMEDIA
+  NAFTA_PREMIUM
+  GASOIL
+  GASOIL_PREMIUM
+  GLP
+  BIOETANOL
+}
+
+model User {
+  id        Int       @id @default(autoincrement())
+  email     String    @unique
+  password  String
+  role      Role      @default(USER)
+  vehicles  Vehicle[]
+  permissions MenuPermission[]
+}
+
+model Brand {
+  id       Int       @id @default(autoincrement())
+  name     String    @unique
+  vehicles Vehicle[]
+}
+
+model Vehicle {
+  id           Int          @id @default(autoincrement())
+  brandId      Int
+  brand        Brand        @relation(fields: [brandId], references: [id])
+  model        String
+  type         VehicleType
+  licensePlate String       @unique
+  wheels       Int
+  doors        Int
+  tankCapacity Float
+  images       String[]     @default([])
+  userId       Int
+  user         User         @relation(fields: [userId], references: [id])
+  fuelLoads    FuelLoad[]
+}
+
+model FuelLoad {
+  id            Int      @id @default(autoincrement())
+  date          DateTime @default(now())
+  odometer      Int?
+  kmDriven      Int
+  fuelType      FuelType @default(NAFTA_COMUN)
+  liters        Float
+  totalPrice    Float
+  pricePerLiter Float?   // se calcula si no se envía
+  vehicleId     Int
+  vehicle       Vehicle  @relation(fields: [vehicleId], references: [id])
+  imageUrl      String?  // ruta de la foto del odómetro
+  createdAt     DateTime @default(now())
+}
+
+model MenuPermission {
+  id     Int  @id @default(autoincrement())
+  userId Int
+  user   User @relation(fields: [userId], references: [id])
+  menu   Menu
+  enabled Boolean @default(true)
+
+  @@unique([userId, menu])
+}

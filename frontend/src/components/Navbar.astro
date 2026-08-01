@@ -1,0 +1,15 @@
+// src/components/Navbar.astro
+---
+import { useState } from 'react';
+---
+<nav class="bg-surface text-text p-4 shadow-md">
+  <div class="container flex justify-between items-center">
+    <a href="/" class="text-2xl font-bold text-primary">🚗 Autocar</a>
+    <ul class="flex space-x-4">
+      <li><a href="/" class="hover:text-primary-light">Inicio</a></li>
+      <li><a href="/login" class="hover:text-primary-light">Login</a></li>
+      <li><a href="/register" class="hover:text-primary-light">Registro</a></li>
+      <li><a href="/dashboard" class="hover:text-primary-light">Dashboard</a></li>
+    </ul>
+  </div>
+</nav>

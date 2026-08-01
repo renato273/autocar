@@ -1,0 +1,16 @@
+- `[x]` Modificar Prisma Schema
+  - `[x]` Agregar modelo `Brand`
+  - `[x]` Cambiar `brand` a `brandId` en `Vehicle`
+  - `[x]` Ejecutar Prisma push
+- `[x]` Crear y ejecutar seedBrands.ts
+- `[x]` Backend: Rutas y Controladores
+  - `[x]` Crear brandController.ts
+  - `[x]` Crear brandRoutes.ts
+  - `[x]` Registrar rutas en index.ts
+  - `[x]` Modificar vehicleController.ts para usar brandId y populate brand
+- `[x]` Frontend: Tipos e interfaces
+  - `[x]` Actualizar types/index.ts
+- `[x]` Frontend: Vistas
+  - `[x]` Actualizar Admin page con Gestor de Marcas
+  - `[x]` Actualizar Formulario de Nuevo Vehículo
+  - `[x]` Actualizar VehicleCard y Detalles de Vehículo

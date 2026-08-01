@@ -1,0 +1,88 @@
+# ============================================
+# AutoCar - Git Ignore
+# ============================================
+
+# ---- Dependencias ----
+node_modules/
+.pnp/
+.pnp.js
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+*.tsbuildinfo
+
+# ---- Backend (Node / Express / Prisma) ----
+backend/dist/
+backend/build/
+backend/coverage/
+backend/uploads/
+backend/*.log
+
+# ---- Prisma ----
+# El cliente generado va en node_modules; no versionar
+*.prisma.lock
+
+# ---- Frontend (Next.js) ----
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/next-env.d.ts
+frontend/coverage/
+frontend/*.tsbuildinfo
+
+# ---- Variables de entorno ----
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+!.env.example
+
+# ---- Logs ----
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ---- Caché ----
+.cache/
+.eslintcache
+.turbo/
+.vite/
+
+# ---- Tests ----
+coverage/
+*.lcov
+.nyc_output/
+
+# ---- IDE / Editor ----
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ---- Archivos de sistema ----
+.DS_Store
+Thumbs.db
+Desktop.ini
+~$*
+
+# ---- Artefactos de compilación variados ----
+*.tgz
+*.rar
+*.zip
+
+# ---- Misceláneos ----
+.tmp/
+.temp/
+*.orig
+*.rej

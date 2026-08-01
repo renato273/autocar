@@ -1,0 +1,14 @@
+{
+  "name": "prisma",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "generate": "prisma generate"
+  },
+  "devDependencies": {
+    "prisma": "^5.14.0"
+  },
+  "dependencies": {
+    "@prisma/client": "5.14.0"
+  }
+}

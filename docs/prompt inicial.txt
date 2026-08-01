@@ -1,0 +1,32 @@
+quiero generar un proyecto con astro como frontend , monorepo
+
+el sistema debera tener:
+
+tener un sistema de roles que permita habiliatar o desabilitar menus de acceso a un usuario por defecto generar un admin 
+El sistema debera permitir la opcion de crear usuarios (CRUD)
+permitir al usuario registrar vehiculos, pedir informacion de marca, modelo, tipo (auto, suv,misuv,carreta,moto,etc), matricula (alfanumerica),cantidad de ruedas, cantidad de puertas,capacidad tanque
+
+un usuario podra tener vinculado N cantidad de vehiculos
+
+Luego tener un apartado para realizar carga de combustibles
+
+en donde se podra agregar el odometro, o kilometros recorridos, cantidad de combustible cargado, precio total de combustible, o precio por litro de combustible
+
+se debe de tener la opcion de generar datos con ingenieria inversa por ejemplo si cargo el monto total de diner gastado 100000 y cargo la cantidad de litros cargados ejemplo 10 litros, se debe calcular el costo litro para completar el formulario
+
+Debe tener tambien luego de guardar el calculo de kilometros por litro y consumo de litros por cada 100 kilometros
+
+
+añadir opcion de subir imagen de odometro u otro tipo de imagen
+
+
+tener un dashboard de consumos y gastos diario, semanal. mensual por cada vehiculo del usuario
+
+
+
+interfaz debe ser responsive para adaptarse perfectamente a mobile o desktop
+
+
+generame el plan para desarrollar el sistema si tienes consultas hazmelas
+
+de preferencia base de datos postgres , orm prisma, frontend astro 
